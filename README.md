@@ -1,51 +1,39 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+# Luxury Real Estate Landing (Next.js)
 
-export default class MyDocument extends Document {
-  render() {
-    return (
-      <Html lang="vi">
-        <Head>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="robots" content="index, follow" />
-          <meta name="mobile-web-app-capable" content="yes" />
-          <meta name="title" content="Phạm Nguyễn Nam Anh | Luxury Real Estate & Interior Design" />
-          <meta name="description" content="Landing page chuyên nghiệp giới thiệu dự án BĐS hạng sang Việt Nam, dịch vụ nội thất Hhome Design & Hhome Care (15 năm kinh nghiệm)." />
-          <meta name="keywords" content="Bất động sản cao cấp, Hhome Design, Hhome Care, Vinhomes, MasteriseHome, Nội thất sang trọng, Luxury Real Estate Vietnam" />
-          <meta name="author" content="Phạm Nguyễn Nam Anh" />
+This is a ready-to-deploy Next.js project for the landing page created for:
+**Phạm Nguyễn Nam Anh** — Vinhomes & MasteriseHome consultant, Hhome Design & Hhome Care.
 
-          {/* Canonical URL */}
-          <link rel="canonical" href="https://hhomedesign.vn/" />
+## What you must update before deploying
+1. **Google Form URL & entry IDs**
+   - Open `pages/index.js` and replace `GOOGLE_FORM_URL` with your real Google Form `formResponse` endpoint.
+   - Replace the `entry.XXXXX` keys in the `formBody` object with the actual entry IDs from your Google Form.
 
-          {/* Open Graph & Twitter Meta */}
-          <meta property="og:title" content="Phạm Nguyễn Nam Anh | Luxury Real Estate & Interior Design" />
-          <meta property="og:description" content="Landing page chuyên nghiệp giới thiệu dự án BĐS hạng sang Việt Nam, dịch vụ nội thất Hhome Design & Hhome Care (15 năm kinh nghiệm)." />
-          <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" />
-          <meta property="og:site_name" content="Hhome Design & Hhome Care" />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://hhomedesign.vn/" />
+2. **Contact details** (if you want to change further)
+   - Hotline and email already set to: `0865.967.565` and `Namanhphamnguyen120697@gmail.com`.
 
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Phạm Nguyễn Nam Anh | Luxury Real Estate & Interior Design" />
-          <meta name="twitter:description" content="Landing page chuyên nghiệp giới thiệu dự án BĐS hạng sang Việt Nam, dịch vụ nội thất Hhome Design & Hhome Care (15 năm kinh nghiệm)." />
-          <meta name="twitter:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" />
+## How to run locally
+1. Install Node.js (v18+ recommended).
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Run the dev server:
+   ```
+   npm run dev
+   ```
+4. Open http://localhost:3000
 
-          <meta name="theme-color" content="#111827" />
+## How to deploy (recommended)
+### Vercel (best for Next.js)
+1. Create a GitHub repository and push this project.
+2. Go to https://vercel.com and import the repository.
+3. Vercel auto-detects Next.js and deploys.
+4. (Optional) Set environment variables on Vercel if you prefer to store GOOGLE_FORM_URL securely.
 
-          {/* Favicon for Hhome Brand */}
-          <link rel="icon" type="image/png" href="https://hhomedesign.vn/favicon-hhome.png" />
-          <link rel="apple-touch-icon" href="https://hhomedesign.vn/favicon-hhome.png" />
+### Netlify
+Netlify supports Next.js via the adapter; Vercel is simpler. If you prefer Netlify, follow Netlify docs for Next.js.
 
-          {/* Deployment Instructions */}
-          <meta name="vercel-deploy-step" content="Bước 3: Trong Vercel → nhấn 'New Project' → chọn repo bạn vừa upload → chọn framework là Next.js (Vercel sẽ tự nhận diện)." />
-
-          <title>Phạm Nguyễn Nam Anh | Luxury Real Estate & Interior Design</title>
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
-}
+## Notes
+- Tailwind CSS is not pre-configured in this zip. If you want Tailwind, follow Next.js + Tailwind setup:
+  https://tailwindcss.com/docs/guides/nextjs
+- The project uses `framer-motion` and `lucide-react`. They are listed in package.json.
